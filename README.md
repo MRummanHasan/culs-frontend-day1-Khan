@@ -1,65 +1,71 @@
+<!--
+@authors;
+Salama
+Rumman Khan
+Bader
+Muhammad Tauseef
+-->
+
 # The Little Herb Garden
+A small, responsive herb guide built for the Contemporary Frontend Development course.
 
-A small website for day 1 of **Frontend Development**.
+## Run locally
 
-It is fixed by @pepe Josef Pospisil
+The page uses `fetch()` to read JSON files. Browsers commonly block local file requests, so use a local web server.
 
-## What you need
+From this folder, run one of these:
 
-- a GitHub account
-- Git
-- an editor
-- a browser (Firefox recommended)
-- [Node.js](https://nodejs.org/) (the LTS version), which brings `npx`
+```bash
+python3 -m http.server 800
+```
+Then open <http://localhost:8000>.
 
-## Get your copy
-
-1. **Fork** this repository to your GitHub account.
-2. **Clone your fork**, not this repository:
-
-   ```sh
-   git clone https://github.com/<your-name>/culs-frontend-day1.git
-   cd culs-frontend-day1
-   ```
-
-## Run it
-
-Start a small web server in the project folder:
-
-```sh
+Alternatively, if Node.js is installed:
+```bash
 npx serve
 ```
 
-The first time, `npx` asks whether to install `serve`. Answer `y`.
+## Explore
 
-Then open the address it prints, usually <http://localhost:3000>.
-Stop the server with `Ctrl+C`.
+- Select an herb card or use a navigation link. The URL hash identifies the herb, for example `index.html#basil`.
+- Search by herb name or description.
+- Filter by culinary or aromatic category.
+- Use Tab, Shift+Tab, Enter, and Space to navigate controls.
 
-Do not open `index.html` by double-clicking it. A `file://` page is not the Web.
+## Data format
 
-## Your mission
+Every herb is stored as `data/<id>.json` using the same fields:
 
-Something is wrong. Several things, in fact.
-
-1. Inspect before you change anything: the page, the Console, the Network panel, the Inspector.
-2. Pick one problem and find out why it happens.
-3. Fix it, reload, verify.
-4. Commit that one fix, with a message that says what you fixed.
-5. Repeat.
-
-You are done when:
-
-- the Console shows no unexplained errors
-- the Network panel shows no missing files
-- every link on the page goes where it says
-- `git status` is clean, and `git push` has sent your commits to GitHub
-
-## The project
-
-```text
-index.html    the page
-style.css     how it looks
-app.js        what it does
-data/         the herbs, as JSON
-images/       the logo and a picture
+```json
+{
+  "id": "basil",
+  "name": "Basil",
+  "scientificName": "Ocimum basilicum",
+  "category": "culinary",
+  "emoji": "🌿",
+  "description": "A short introduction.",
+  "light": "Bright light",
+  "water": "Keep lightly moist",
+  "difficulty": "Easy"
+}
 ```
+
+To add an herb:
+1. Create a JSON file under `data/` following this format.
+2. Add its ID to `HERB_IDS` in `app.js`.
+3. Test its card, detail view, and URL hash.
+
+## Error handling and limitations
+
+- Unknown herb IDs show a not-found message.
+- A missing or invalid JSON file is reported; available herbs can still appear.
+- If the page is opened directly as a `file://` URL, fetch may fail. Use a local server.
+- This is a frontend learning project. Search and filters work in the browser; there is no account, mailing list, or backend.
+
+## Accessibility
+- Semantic landmarks, labeled search and filter controls, visible focus styles, skip link, and live search status.
+- Navigation and cards use links/buttons with keyboard access.
+- Reduced-motion preference is respected.
+
+## Course extension
+The optional feature is the live search and category filter, including the visible result count.
