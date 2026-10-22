@@ -16,6 +16,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--cream); color: var(--ink); font-family: "DM Sans", sans-serif; line-height: 1.6; }
 a { color: inherit; }
+.herb-card { padding: 10px;}
 button, input, select { font: inherit; }
 button, select, a { -webkit-tap-highlight-color: transparent; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #d18b39; outline-offset: 3px; }
