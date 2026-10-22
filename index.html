@@ -3,56 +3,88 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore a small garden of useful herbs.">
   <title>The Little Herb Garden</title>
-  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <script src="app.js" type="module"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <img class="logo" src="images/logo.svg" alt="" width="48" height="48">
-    <p class="site-name">The Little Herb Garden</p>
-    <nav>
-      <ul>
-        <li><a href="#herbs">Herbs</a></li>
-        <li><a href="#visit">Visit</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
+    <div class="shell header-inner">
+      <a class="brand" href="#basil" aria-label="The Little Herb Garden home">
+        <span class="brand-mark" aria-hidden="true">✿</span>
+        <span>The Little <strong>Herb Garden</strong></span>
+      </a>
+      <nav aria-label="Herb navigation">
+        <ul class="nav-list">
+          <li><a href="#basil">Basil</a></li>
+          <li><a href="#mint">Mint</a></li>
+          <li><a href="#rosemary">Rosemary</a></li>
+          <li><a href="#thyme">Thyme</a></li>
+          <li><a href="#parsley">Parsley</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="intro">
-      <div>
-        <h1>Herbs you can smell, taste and grow</h1>
-        <p>A small garden with herbs for the kitchen, for tea and for the bees.
-          See <a href="#herbs">what grows here</p>
+  <main id="main" class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">GROW A LITTLE EVERY DAY</p>
+      <h1 id="page-title">A greener kind of <em>everyday.</em></h1>
+      <p class="intro-copy">Meet the herbs that bring freshness, fragrance, and flavor to your home.</p>
+      <form id="search-form" class="search" role="search">
+        <label class="visually-hidden" for="herb-search">Search herbs</label>
+        <input id="herb-search" type="search" placeholder="Search the garden…" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+      <p id="search-status" class="status" aria-live="polite"></p>
+    </section>
+
+    <section class="garden-section" aria-labelledby="garden-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2 id="garden-title">Explore the garden</h2>
+        </div>
+        <label class="filter-label" for="category-filter">Filter
+          <select id="category-filter">
+            <option value="all">All herbs</option>
+            <option value="culinary">Culinary</option>
+            <option value="aromatic">Aromatic</option>
+          </select>
+        </label>
       </div>
-      <img class="hero" src="images/garden.svg" alt="Two raised beds full of herbs, with a bee">
+      <div id="herb-grid" class="herb-grid" aria-live="polite">
+        <p class="loading">Loading the garden…</p>
+      </div>
     </section>
 
-    <section id="herbs">
-      <h2>What grows here</h2>
-      <p class="count">Loading the herbs…</p>
-      <ul id="herbs-list" class="cards"></ul>
+    <section id="herb-detail" class="detail-panel" aria-labelledby="detail-title" tabindex="-1">
+      <div class="detail-placeholder">
+        <span class="detail-icon" aria-hidden="true">🌱</span>
+        <div>
+          <p class="eyebrow">YOUR SELECTED HERB</p>
+          <h2 id="detail-title">Choose an herb</h2>
+          <p>Select a card or use the herb links above to explore its growing notes.</p>
+        </div>
+      </div>
+      <div id="detail-content"></div>
     </section>
 
-    <section id="visit">
-      <h2>Visit</h2>
-      <p>The garden is open every day from sunrise to sunset.
-        Bring a friend, rub a leaf between your fingers, and leave the bees alone.</p>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>The garden is made up, and so is this site: a practice project for
-        <a href="https://github.com/pepe/culs-frontend-day1">Frontend Development, day 1</a>.</p>
-    </section>
+    <aside class="garden-note">
+      <span aria-hidden="true">☀</span>
+      <div><h2>A small gardening reminder</h2>
+        <p>Check the soil before watering. Most herbs prefer good drainage and the right amount of light.</p>
+      </div>
+    </aside>
   </main>
 
-  <footer>
-    <p>Made with HTML, CSS and JavaScript.
-      <a href="https://developer.mozilla.org/">MDN</a> helped.</p>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <p>✿ The Little Herb Garden</p>
+      <p>A student project about content, structure, and the web.</p>
+    </div>
   </footer>
 </body>
 </html>
