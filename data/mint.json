@@ -1,0 +1,11 @@
+{
+  "id": "mint",
+  "name": "Mint",
+  "scientificName": "Mentha",
+  "category": "culinary",
+  "emoji": "🍃",
+  "description": "A fresh, vigorous herb used in teas, drinks, and cooking. It spreads quickly, so a pot can help keep it contained.",
+  "light": "Sun to partial shade",
+  "water": "Moist soil",
+  "difficulty": "Easy"
+}

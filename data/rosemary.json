@@ -1,0 +1,11 @@
+{
+  "id": "rosemary",
+  "name": "Rosemary",
+  "scientificName": "Salvia rosmarinus",
+  "category": "aromatic",
+  "emoji": "🌱",
+  "description": "A woody, aromatic herb with needle-like leaves. It enjoys sunny places and soil that drains well.",
+  "light": "Full sun",
+  "water": "Let top soil dry",
+  "difficulty": "Moderate"
+}

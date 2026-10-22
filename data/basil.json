@@ -1,0 +1,11 @@
+{
+  "id": "basil",
+  "name": "Basil",
+  "scientificName": "Ocimum basilicum",
+  "category": "culinary",
+  "emoji": "🌿",
+  "description": "A fragrant leafy herb often used in salads, sauces, and pesto. Pinch off the tips to encourage bushy growth.",
+  "light": "Bright light",
+  "water": "Keep lightly moist",
+  "difficulty": "Easy"
+}

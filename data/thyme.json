@@ -1,0 +1,11 @@
+{
+  "id": "thyme",
+  "name": "Thyme",
+  "scientificName": "Thymus vulgaris",
+  "category": "aromatic",
+  "emoji": "☘️",
+  "description": "A compact herb with tiny leaves and a warm aroma. It works well in containers and prefers a sunny spot.",
+  "light": "Full sun",
+  "water": "Water sparingly",
+  "difficulty": "Easy"
+}
