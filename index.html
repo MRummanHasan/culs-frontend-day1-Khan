@@ -31,17 +31,22 @@
       </nav>
     <button class="button-11" role="button" id="theme-toggle" aria-label="Toggle Dark Mode">🌙Dark Mode</button>
 
+      <button id="lang-toggle" data-lang="en">🇨🇿 Přepnout do češtiny</button>
     </div>
     <!-- index.html -->
   
 
   </header>
-
+<main>
+  <!-- Use data-i18n attributes to tell JS which string to swap -->
+  <!-- <h2 data-i18n="welcome_title">Welcome to my website</h2> -->
+  <!-- <p data-i18n="welcome_desc">This is a static site with dark mode and multi-language support.</p> -->
+</main>
   <main id="main" class="shell">
     <section class="intro" aria-labelledby="page-title">
       <p class="eyebrow">GROW A LITTLE EVERY DAY</p>
-      <h1 id="page-title">A greener kind of <em>everyday.</em></h1>
-      <p class="intro-copy">Meet the herbs that bring freshness, fragrance, and flavor to your home.</p>
+      <h1 id="page-title" data-i18n="welcome_title">A greener kind of <em>everyday.</em></h1>
+      <p class="intro-copy" data-i18n="welcome_desc">Meet the herbs that bring freshness, fragrance, and flavor to your home.</p>
       <form id="search-form" class="search" role="search">
         <label class="visually-hidden" for="herb-search">Search herbs</label>
         <input id="herb-search" type="search" placeholder="Search the garden…" autocomplete="off">

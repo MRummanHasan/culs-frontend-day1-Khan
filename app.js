@@ -139,3 +139,48 @@ toggleButton.addEventListener('click', () => {
 function updateButtonText(theme) {
   toggleButton.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
 }
+// 8. Language toggle
+// script.js (Append this logic to your existing script file)
+
+// 1. Define your English and Czech translations
+const translations = {
+  en: {
+    welcome_title: "A greener kind of everyday.",
+    welcome_desc: "Meet the herbs that bring freshness, fragrance, and flavor to your home.",
+    toggle_btn: "🇨🇿"
+  },
+  cs: {
+    welcome_title: "Ekologičtější každodennost.",
+    welcome_desc: "Seznamte se s bylinkami, které do vašeho domova vnesou svěžest, vůni a chuť.",
+    toggle_btn: "🇬🇧"
+  }
+};
+
+const langToggle = document.getElementById('lang-toggle');
+
+// 2. Initialize language selection from localStorage or default to English
+let currentLang = localStorage.getItem('site_lang') || 'en';
+applyLanguage(currentLang);
+
+// 3. Handle language toggle click
+langToggle.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'cs' : 'en';
+  localStorage.setItem('site_lang', currentLang);
+  applyLanguage(currentLang);
+});
+
+// 4. Function to scan DOM elements and replace text content
+function applyLanguage(lang) {
+  document.documentElement.setAttribute('lang', lang);
+  
+  // Find all elements with a data-i18n attribute
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (translations[lang][key]) {
+      element.textContent = translations[lang][key];
+    }
+  });
+  
+  // Update toggle button text manually
+  langToggle.textContent = translations[lang]['toggle_btn'];
+}
