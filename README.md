@@ -11,8 +11,6 @@ A small, responsive herb guide built for the Contemporary Frontend Development c
 
 ## Run locally
 
-The page uses `fetch()` to read JSON files. Browsers commonly block local file requests, so use a local web server.
-
 From this folder, run one of these:
 
 ```bash
