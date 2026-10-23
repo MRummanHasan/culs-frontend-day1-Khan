@@ -110,3 +110,32 @@ window.addEventListener("hashchange", showSelectedHerb);
 
 // Start the garden
 loadGarden();
+// 7. Dark mode toggle
+// script.js
+const toggleButton = document.getElementById('theme-toggle');
+
+// 1. Determine initial theme: check local storage, fallback to system preference
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+// 2. Set the initial theme attribute on the <html> tag
+document.documentElement.setAttribute('data-theme', currentTheme);
+updateButtonText(currentTheme);
+
+// 3. Listen for button clicks to toggle theme
+toggleButton.addEventListener('click', () => {
+  currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  
+  // Apply theme to document
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  // Persist preference
+  localStorage.setItem('theme', currentTheme);
+  // Update button presentation
+  updateButtonText(currentTheme);
+});
+
+function updateButtonText(theme) {
+  toggleButton.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+}

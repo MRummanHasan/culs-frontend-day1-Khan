@@ -106,3 +106,61 @@ h1 em { color: var(--green); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* dark mode  */
+
+/* 1. Define Default Light Theme Colors */
+/* :root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --accent-color: #0066cc;
+  --card-bg: #f5f5f5;
+} */
+
+/* 2. Define Dark Theme Overrides */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --accent-color: #4da6ff;
+  --card-bg: #1e1e1e;
+}
+
+/* 3. Apply variables to your layouts */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 20px;
+}
+
+a {
+  color: var(--accent-color);
+}
+/* dark */
+
+/* CSS */
+.button-11 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  color: #3D3D3D;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-11:focus {
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
